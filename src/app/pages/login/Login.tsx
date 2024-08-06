@@ -1,6 +1,6 @@
 //import { useNavigate } from "react-router-dom";
 
-import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useContext, useMemo, useRef, useState } from "react";
 import { InputLogin } from "./components/InputLogin";
 import { ButtonLogin } from "./components/ButtonLogin";
 import { UsuarioLogadoContext } from "../../core/contexts";
@@ -44,7 +44,6 @@ export const Login = () => {
     }, [email, password]);
 
     const { nomeDoUsuario } = useContext(UsuarioLogadoContext);
-
 
     return (
         <div>

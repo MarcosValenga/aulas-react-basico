@@ -1,6 +1,7 @@
 import { Api } from "../ApiConfig";
 import { ApiException } from "../ErrorException";
 
+
 export interface ITarefa {
     id: number;
     title: string;
@@ -34,7 +35,7 @@ const create = async (dataToCreate: Omit<ITarefa, 'id'>): Promise<ITarefa | ApiE
     }
 };
 
-const updateById = async (id: string, dataToCreate: ITarefa): Promise<ITarefa | ApiException>  => {
+const updateById = async (id: number, dataToCreate: ITarefa): Promise<ITarefa | ApiException>  => {
     try {
         const { data } = await Api().put(`/tarefas/${id}`, dataToCreate);
         return data;
@@ -43,7 +44,7 @@ const updateById = async (id: string, dataToCreate: ITarefa): Promise<ITarefa | 
     }
 };
 
-const deleteById = async (id: string): Promise<undefined | ApiException>  => {
+const deleteById = async (id: number): Promise<undefined | ApiException>  => {
     try {
         const { data } = await Api().delete(`/tarefas/${id}`);
         return data;
